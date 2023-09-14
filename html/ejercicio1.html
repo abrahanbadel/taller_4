@@ -10,11 +10,15 @@
 
     <form action="">
 
-    <input type="text" placeholder="Nombre:"> &nbsp;
+    <input type="text" placeholder="Nombre:" pattern="[a-z A-Z ]*" maxlength="60"> &nbsp;
     <input type="text" placeholder="Compañia:">
 <br> <br>
-    <input type="text" placeholder="Numero:"> &nbsp;
-    <input type="email" placeholder="Email:">
+<abbr title="Se debe validar este formato: +dd-ddd-ddddddddd"><input type="text" placeholder="Número:" pattern="\+[0-9]{2} [0-9]{3} [0-9]{9}">
+    &nbsp;</abbr>
+    
+    <abbr title="solo @gmail.com"><input type="email" placeholder="Email:" pattern=".+@gmail\.com" maxlength="30"></abbr>
+    
+
 <br><br>
     <textarea placeholder="Deja Un Mensaje" cols="47" rows="10"></textarea> <br><br>
 <input type="submit">
