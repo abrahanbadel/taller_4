@@ -12,37 +12,89 @@
 
     <table>
         <td> account type:</td>
-        <td><input type="radio">individual <br> <input type="radio">entity</td>
+        <td><input type="radio" name="tipo">individual<br>
+            <input type="radio" name="tipo">entity</td>
     </table>
     <br>
-    first name: <input type="text"> <br><br>
-    middle name or initial: <input type="text"><br><br>
-    last name: <input type="text"> <br><br>
+
+    first name: <input type="text" pattern="(Mr|Ms|Mrs) [A-Za-z]{1}[A-Za-z]*" title="(Mr|Ms|Mrs) + nombre"> <br><br>
+    middle name or initial: <input type="text" pattern="[A-Z]{1}[a-z]{1}" title="Una sola palabra de máximo dos letras. La primera debe ser en mayúscula la segunda en minúscula"><br><br>
+
+    last name: <input type="text" pattern="(Mr|Ms|Mrs)   [A-Za-z]{1}[A-Za-z]*" title="(Mr|Ms|Mrs)+ 3 espacios + nombre"> <br><br>
     
     suffix: <select> 
-        <option value="">Mr</option>
-        <option value="">Mrs</option>
-        <option value="">Ms</option>
+        <option value="Mr">Mr</option>
+        <option value="Mrs">Mrs</option>
+        <option value="Ms">Ms</option>
     </select> <br><br>
+
     taxpayer identification number: <input type="number" style="width: 50px;"> - <input type="number" style="width: 50px;"> - <input type="number" style="width: 50px;"> <br><br>
     date of birth: <input type="date"> <br><br>
-    street address: <input type="text"> <br> 
-    <input type="text"><br><input type="text"><br><br>
+
+    <table>
+        <td style="vertical-align: top;">
+    Street Address:
+        <td>
+            <input type="text"><br> 
+            <input type="text"><br>
+            <input type="text"><br>
+        </td>
+    </table><br>
+
     city: <input type="text"><br><br>
 
-    state: <select> 
-        <option value="">departamentos</option>
-    </select> <br><br>
+    state: <select name="departamento">
+        <option value="seleccionar">Seleccionar departamento</option>
+        <option value="amazonas">Amazonas</option>
+        <option value="antioquia">Antioquia</option>
+        <option value="arauca">Arauca</option>
+        <option value="atlantico">Atlántico</option>
+        <option value="bolivar">Bolívar</option>
+        <option value="boyaca">Boyacá</option>
+        <option value="caldas">Caldas</option>
+        <option value="caqueta">Caquetá</option>
+        <option value="casanare">Casanare</option>
+        <option value="cauca">Cauca</option>
+        <option value="cesar">Cesar</option>
+        <option value="choco">Chocó</option>
+        <option value="cordoba">Córdoba</option>
+        <option value="cundinamarca">Cundinamarca</option>
+        <option value="guainia">Guainía</option>
+        <option value="guaviare">Guaviare</option>
+        <option value="huila">Huila</option>
+        <option value="la_guajira">La Guajira</option>
+        <option value="magdalena">Magdalena</option>
+        <option value="meta">Meta</option>
+        <option value="nariño">Nariño</option>
+        <option value="norte_santander">Norte de Santander</option>
+        <option value="putumayo">Putumayo</option>
+        <option value="quindio">Quindío</option>
+        <option value="risaralda">Risaralda</option>
+        <option value="san_andres">San Andrés y Providencia</option>
+        <option value="santander">Santander</option>
+        <option value="sucre">Sucre</option>
+        <option value="tolima">Tolima</option>
+        <option value="valle_del_cauca">Valle del Cauca</option>
+        <option value="vaupes">Vaupés</option>
+        <option value="vichada">Vichada</option>
+      </select>
+       <br><br>
 
-    zip code: <input type="number" style="width: 50px;"> - <input type="number" style="width: 50px;"> <br><br>
-    home phone:  (<input type="number" style="width: 50px;">) <input type="number" style="width: 50px;"> - <input type="number" style="width: 50px;"> <br><br>
-    driver's license/state ID number: <input type="text"> <br><br>
+
+    zip code: <input type="text" style="width: 50px;" pattern="[A-Za-z0-9]{6}" title="6 digitos"> - <input type="text" style="width: 50px;" pattern="(?:[A-Za-z0-9]{4})?" title="opcional 4 dígitos"> (6 digitos + opcional 4 dígitos) <br><br>
+
+<!--home phone:  (<input type="text" style="width: 50px;" pattern="\+[0-9]{2}" title="+dd" required>) <input type="text" style="width: 50px;" pattern="[0-9]{3}" title="ddd" required> - <input type="text" style="width: 50px;" pattern="[0-9]{7}" title="ddddddd" required> <br><br>-->  
+  
+  driver's license/state ID number: <input type="text" pattern="D\d+" title="Empezar por D y seguido mínimo por un digito"> <br><br>
     
     issuing state: <select>
         <option value="">- -</option>
     </select> <br><br>
 
-    expiration date: <input type="date">
+    expiration date: <input type="number" min="1" max="12" style="width: 50px;"> - <input type="number" min="1" max="31" style="width: 50px;"> - <input type="number" min="2000" max="2100" style="width: 50px;"> (mes - dia - año)
+    
+
+    <br><br><input type="submit">
 
 </form>
 
